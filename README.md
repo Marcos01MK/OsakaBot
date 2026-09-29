@@ -1,7 +1,7 @@
 # 🌸 OsakaBot
 
 <div style="display: inline_block">
-  <img align="center" alt="html5" src="[https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white](https://flow-content.google/image/f3df8c61-3da1-48e7-9f42-d54316767b3f?Expires=1790734304&KeyName=labs-flow-prod-cdn-key&Signature=7POAzboEBmNvabdPlCXL3HCi8WU)" />
+  <img src="[https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white](https://flow-content.google/image/f3df8c61-3da1-48e7-9f42-d54316767b3f?Expires=1790734304&KeyName=labs-flow-prod-cdn-key&Signature=7POAzboEBmNvabdPlCXL3HCi8WU)" />
 </div><br/>
 Bot de Discord temático da **Osaka** (Azumanga Daioh), feito com carinho e muita personalidade.
 
