@@ -1,6 +1,6 @@
 # 🌸 OsakaBot
 
-![OsakaBot Banner](./[assets/osakabot-banner.jpg](https://flow-content.google/image/f3df8c61-3da1-48e7-9f42-d54316767b3f?Expires=1790734304&KeyName=labs-flow-prod-cdn-key&Signature=7POAzboEBmNvabdPlCXL3HCi8WU))
+![OsakaBot Banner](![OsakaBot Banner](assets/osakabot-banner.jpg))
 
 Bot de Discord temático da **Osaka** (Azumanga Daioh), feito com carinho e muita personalidade.
 
