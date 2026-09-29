@@ -1,6 +1,6 @@
 # 🌸 OsakaBot
 
-![OsakaBot Banner](![OsakaBot Banner](assets/osakabot-banner.jpg))
+![OsakaBot Banner](assets/osakabot-banner.jpg)
 
 Bot de Discord temático da **Osaka** (Azumanga Daioh), feito com carinho e muita personalidade.
 
