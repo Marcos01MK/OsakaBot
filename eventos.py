@@ -1,14 +1,8 @@
 import discord
 import re
 
-# ============================================================
-# CONFIGURAÇÃO DOS EVENTOS
-# ============================================================
 
-# Coloque aqui o GIF da Osaka em choque
 GIF_OSAKA_CHOQUE = "https://media1.tenor.com/m/SiRpGBwmY4oAAAAC/azumanga-azumanga-daioh.gif"
-
-# Coloque aqui o GIF da Osaka chorando
 GIF_OSAKA_CHORANDO = "https://media1.tenor.com/m/ODFy4zme6d4AAAAd/osaka-azumanga-daioh.gif"
 
 

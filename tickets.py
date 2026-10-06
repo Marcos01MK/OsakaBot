@@ -18,24 +18,13 @@ from config import (
 )
 
 
-# ============================================================
-# CONTADOR
-# ============================================================
 
 ticket_counter = 0
 
 
-# ============================================================
-# DONO
-# ============================================================
-
 def is_owner(user):
     return user.id == OWNER_ID
 
-
-# ============================================================
-# BOTÃO FECHAR
-# ============================================================
 
 class FecharTicketView(discord.ui.View):
 
@@ -77,11 +66,6 @@ class FecharTicketView(discord.ui.View):
         except discord.NotFound:
             pass
 
-
-# ============================================================
-# MENU DE TICKETS
-# ============================================================
-
 class TipoTicketSelect(discord.ui.Select):
 
     def __init__(self):
@@ -111,13 +95,6 @@ class TipoTicketSelect(discord.ui.Select):
         interaction: discord.Interaction
     ):
 
-        # ====================================================
-        # IMPORTANTE
-        # ====================================================
-        # Respondemos imediatamente ao Discord.
-        # Isso evita "Ayumu Kasuga não respondeu a tempo"
-        # enquanto o canal está sendo criado.
-
         await interaction.response.defer(
             ephemeral=True
         )
@@ -126,11 +103,6 @@ class TipoTicketSelect(discord.ui.Select):
             interaction,
             self.values[0]
         )
-
-
-# ============================================================
-# PAINEL
-# ============================================================
 
 class TicketView(discord.ui.View):
 
@@ -144,11 +116,6 @@ class TicketView(discord.ui.View):
             TipoTicketSelect()
         )
 
-
-# ============================================================
-# CRIAR TICKET
-# ============================================================
-
 async def criar_ticket(
     interaction: discord.Interaction,
     tipo: str
@@ -159,10 +126,6 @@ async def criar_ticket(
     guild = interaction.guild
     usuario = interaction.user
 
-
-    # ========================================================
-    # TIPO
-    # ========================================================
 
     if tipo not in TIPOS_TICKET:
 
@@ -219,16 +182,9 @@ async def criar_ticket(
     numero = ticket_counter
 
 
-    # ========================================================
-    # NOME
-    # ========================================================
-
     nome_canal = f"{dados['nome']}-{numero:04d}"
 
 
-    # ========================================================
-    # PERMISSÕES
-    # ========================================================
 
     overwrites = {
 
@@ -245,11 +201,6 @@ async def criar_ticket(
         )
     }
 
-
-    # ========================================================
-    # PERMISSÕES DA OSAKA
-    # ========================================================
-
     bot_member = guild.me
 
     if bot_member:
@@ -263,10 +214,6 @@ async def criar_ticket(
             manage_messages=True
         )
 
-
-    # ========================================================
-    # VOCÊ
-    # ========================================================
 
     dono = guild.get_member(
         OWNER_ID
@@ -282,10 +229,6 @@ async def criar_ticket(
         )
 
 
-    # ========================================================
-    # STAFF 1
-    # ========================================================
-
     staff_1 = guild.get_role(
         STAFF_ROLE_1_ID
     )
@@ -297,11 +240,6 @@ async def criar_ticket(
             send_messages=True,
             read_message_history=True
         )
-
-
-    # ========================================================
-    # STAFF 2
-    # ========================================================
 
     staff_2 = guild.get_role(
         STAFF_ROLE_2_ID
@@ -316,10 +254,6 @@ async def criar_ticket(
         )
 
 
-    # ========================================================
-    # CRIAR CANAL
-    # ========================================================
-
     canal = await guild.create_text_channel(
         name=nome_canal,
         category=categoria,
@@ -332,10 +266,6 @@ async def criar_ticket(
     )
 
 
-    # ========================================================
-    # EMBED DA OSAKA
-    # ========================================================
-
     descricao = TICKET_DESCRICAO.format(
         usuario=usuario.mention
     )
@@ -347,10 +277,6 @@ async def criar_ticket(
     )
 
 
-    # ========================================================
-    # THUMBNAIL
-    # ========================================================
-
     if THUMBNAIL_URL:
 
         embed.set_thumbnail(
@@ -358,20 +284,12 @@ async def criar_ticket(
         )
 
 
-    # ========================================================
-    # BANNER
-    # ========================================================
-
     if BANNER_URL:
 
         embed.set_image(
             url=BANNER_URL
         )
 
-
-    # ========================================================
-    # INFORMAÇÕES
-    # ========================================================
 
     embed.add_field(
         name="🎫 Ticket",
@@ -398,18 +316,10 @@ async def criar_ticket(
     )
 
 
-    # ========================================================
-    # RODAPÉ
-    # ========================================================
-
     embed.set_footer(
         text=TICKET_RODAPE
     )
 
-
-    # ========================================================
-    # MENSAGEM DA OSAKA
-    # ========================================================
 
     mencoes = []
 
@@ -434,10 +344,6 @@ async def criar_ticket(
     )
 
 
-    # ========================================================
-    # ENVIAR BADGE + EMBED
-    # ========================================================
-
     await canal.send(
         content=mensagem_osaka,
         embed=embed,
@@ -445,21 +351,10 @@ async def criar_ticket(
     )
 
 
-    # ========================================================
-    # RESPOSTA PARA QUEM ABRIU
-    # ========================================================
-    # Como usamos defer() lá em cima, precisamos usar
-    # followup.send() em vez de response.send_message().
-
     await interaction.followup.send(
         f"🎫 Seu ticket foi criado: {canal.mention}",
         ephemeral=True
     )
-
-
-# ============================================================
-# PAINEL PRINCIPAL
-# ============================================================
 
 async def enviar_painel_ticket(
     interaction: discord.Interaction
@@ -472,10 +367,6 @@ async def enviar_painel_ticket(
     )
 
 
-    # ========================================================
-    # THUMBNAIL
-    # ========================================================
-
     if THUMBNAIL_URL:
 
         embed.set_thumbnail(
@@ -483,9 +374,6 @@ async def enviar_painel_ticket(
         )
 
 
-    # ========================================================
-    # BANNER
-    # ========================================================
 
     if BANNER_URL:
 
@@ -494,18 +382,10 @@ async def enviar_painel_ticket(
         )
 
 
-    # ========================================================
-    # RODAPÉ
-    # ========================================================
-
     embed.set_footer(
         text=PAINEL_RODAPE
     )
 
-
-    # ========================================================
-    # ENVIAR PAINEL
-    # ========================================================
 
     await interaction.response.send_message(
         embed=embed,

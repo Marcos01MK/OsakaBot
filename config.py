@@ -17,13 +17,13 @@ if not TOKEN:
 # ID DO SERVIDOR
 # ============================================================
 
-GUILD_ID = 1541218856163352666
+GUILD_ID = xxxxxxxxxxxxxxxxx
 
 # ID DA CATEGORIA ONDE OS TICKETS SERÃO CRIADOS
-TICKET_CATEGORY_ID = 1541247952704639076
+TICKET_CATEGORY_ID = xxxxxxxxxxxxxxxxx
 
 # SEU ID
-OWNER_ID = 839137533496918036
+OWNER_ID = xxxxxxxxxxxxxxxxx
 
 
 # ============================================================
@@ -145,7 +145,7 @@ TIPOS_TICKET = {
 # ============================================================
 
 # Primeiro cargo da equipe
-STAFF_ROLE_1_ID = 1541235613208940624
+STAFF_ROLE_1_ID = xxxxxxxxxxxxxxxxxx
 
 # Segundo cargo da equipe
-STAFF_ROLE_2_ID = 1541237646683144303
+STAFF_ROLE_2_ID = xxxxxxxxxxxxxxxxxx
